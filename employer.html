@@ -26,6 +26,7 @@
                 <input type="password" id ="signin-password" placeholder="Password" />
               </div>
               <input type="submit" id="login" value="Login" class="btn solid" />
+              
               <p class="social-text">Or Sign in with other ways</p>
       
               <!-- ------Social Icons For Sign In Page -------->
@@ -138,7 +139,7 @@
   const database = getDatabase(app);
   const auth = getAuth();
   signup.addEventListener('click',(e)=> {
-
+    e.preventDefault();
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var username = document.getElementById('username').value;
@@ -163,6 +164,7 @@
     });
   });
   login.addEventListener('click',(e)=>{
+    e.preventDefault();
     var email = document.getElementById('signin-email').value;
     var password = document.getElementById('signin-password').value;
     signInWithEmailAndPassword(auth, email, password)
